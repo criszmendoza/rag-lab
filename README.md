@@ -1,3 +1,7 @@
+
+
+<img width="1536" height="1024" alt="ollama" src="https://github.com/user-attachments/assets/944a9592-4585-47fb-b7c3-6785e6109085" />
+
 # rag-lab / RAG base
 
 Proyecto base para experimentar con **RAG** (Retrieval-Augmented Generation) y LLMs. Pensado para quien se adentra en el mundo de los LLMs y quiere tener una base clara para construir herramientas más robustas.
