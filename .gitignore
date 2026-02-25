@@ -1,0 +1,39 @@
+# Entorno virtual
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+
+# RAG / datos generados (no versionar)
+rag/data/chroma_db/
+rag/data/embeddings_2d_3d.html
+*.db
+*.sqlite3
+
+# PDFs de ejemplo (opcional: descomentar si no querés commitear PDFs)
+# rag/data/docs/*.pdf
+
+# Entorno y secretos
+.env
+.env.local
+.env.*.local
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

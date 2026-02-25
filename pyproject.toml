@@ -1,0 +1,106 @@
+[project]
+name = "rag-lab"
+version = "0.1.0"
+description = "Proyecto base RAG y LLMs: LangChain, Chroma, Ollama, Gradio. Para aprender y extender."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11,<3.13"
+keywords = ["rag", "llm", "chroma", "langchain", "ollama", "embeddings"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.urls]
+Repository = "https://github.com/your-org/rag-lab"  # Reemplazar con tu repo
+Documentation = "https://github.com/your-org/rag-lab#readme"
+
+# Solo lo necesario para que funcione el RAG del paquete `rag`:
+# - Carga/splitting de PDFs con LangChain
+# - Indexación y recuperación en Chroma
+# - Modelo de embeddings con sentence-transformers
+# - Visualización 2D/3D y UI con Gradio
+dependencies = [
+    "chromadb",
+    "sentence-transformers",
+    "langchain-community",
+    "langchain-text-splitters",
+    "pypdf>=4.0.0",
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "plotly",
+    "gradio",
+]
+
+[project.optional-dependencies]
+# Extras para instalaciones vía `pip install "rag-lab[dev]"`, etc.
+dev = [
+    "jupyterlab",
+    "ipywidgets",
+]
+
+# Proyecto solo de dependencias (notebooks/scripts), no se instala como paquete
+[tool.uv]
+package = false
+# unstructured pide numba 0.53 → llvmlite 0.36 (solo Python <3.10). Forzar numba>=0.59 para Python 3.11/3.12.
+override-dependencies = [
+    "numba>=0.59",
+]
+
+[dependency-groups]
+# Uso con uv, por ejemplo:
+#   uv sync --group dev,ml,viz
+dev = [
+    "jupyterlab",
+    "ipywidgets",
+    "tqdm",
+]
+
+ml = [
+    "numpy",
+    "pandas",
+    "scipy",
+    "scikit-learn",
+    "gensim",
+    "torch",
+    "transformers",
+    "datasets",
+    "accelerate",
+    "bitsandbytes",
+    "sentencepiece",
+    "sentence-transformers",
+    "faiss-cpu",
+]
+
+viz = [
+    "matplotlib",
+    "plotly",
+    "jupyter-dash",
+]
+
+data = [
+    "pyarrow",
+    "duckdb",
+]
+
+parsing = [
+    "unstructured",
+    "beautifulsoup4",
+    "feedparser",
+]
+
+providers = [
+    "google-generativeai",
+    "anthropic",
+    "openai",
+    "twilio",
+]
+
+apps = [
+    "modal",
+    "pydub",
+]
